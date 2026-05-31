@@ -21,6 +21,7 @@ import {
   type ExamConfig
 } from "@exam-countdown/shared";
 import { getAudioFiles, getAudioUrl, getConfig, saveConfig } from "./api";
+import { collectBellAudioUrls, syncPreloadedAudio } from "./audio-preload";
 
 type Notice = {
   kind: "ok" | "error";
@@ -97,6 +98,7 @@ export function App() {
   const [audioFiles, setAudioFiles] = useState<AudioFileInfo[]>([]);
   const [notice, setNotice] = useState<Notice>(null);
   const triggeredRules = useRef(new Set<string>());
+  const audioCache = useRef(new Map<string, HTMLAudioElement>());
 
   useEffect(() => {
     getConfig()
@@ -136,6 +138,26 @@ export function App() {
       .then(setAudioFiles)
       .catch(() => setAudioFiles([]));
   }, [config?.audioDirectory]);
+
+  useEffect(() => {
+    if (!config) {
+      audioCache.current.clear();
+      return;
+    }
+
+    const urls = collectBellAudioUrls(config, getAudioUrl);
+    syncPreloadedAudio(audioCache.current, urls, (url) => {
+      const audio = new Audio(url);
+      audio.addEventListener(
+        "error",
+        () => {
+          audioCache.current.delete(url);
+        },
+        { once: true }
+      );
+      return audio;
+    });
+  }, [config]);
 
   const schedule = useMemo(() => (config ? getMergedSchedule(config) : null), [config]);
   const selectedSubjects = useMemo(() => (config ? getSelectedSubjects(config) : []), [config]);
@@ -191,7 +213,13 @@ export function App() {
   const playRule = useCallback(
     (rule: BellRule) => {
       if (config?.audioDirectory && rule.audioFile) {
-        const audio = new Audio(getAudioUrl(config.audioDirectory, rule.audioFile));
+        const url = getAudioUrl(config.audioDirectory, rule.audioFile);
+        const audio = audioCache.current.get(url) ?? new Audio(url);
+        try {
+          audio.currentTime = 0;
+        } catch {
+          // Some formats do not allow seeking until metadata is available.
+        }
         audio.play().catch(playDefaultBell);
         return;
       }
@@ -220,7 +248,7 @@ export function App() {
       const delta = now.getTime() - target.getTime();
       if (delta >= 0 && delta < 1500) {
         triggeredRules.current.add(key);
-        playRule(rule);
+        window.setTimeout(() => playRule(rule), 0);
       }
     }
   }, [config, now, playRule, schedule]);
@@ -300,6 +328,7 @@ export function App() {
 
         <div className="divider" />
         <div className="clock">{formatClock(now)}</div>
+        <div className="remaining-divider" />
         <div className="remaining">{remainingText}</div>
         <footer>
           <span>{config.texts.footerLeft}</span>

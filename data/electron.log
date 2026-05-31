@@ -34,3 +34,101 @@
 [2026-05-31T01:58:30.599Z] backend ready
 [2026-05-31T01:58:30.600Z] waiting for frontend
 [2026-05-31T01:58:43.802Z] frontend ready
+[2026-05-31T03:02:13.801Z] backend exited code=1 signal=null
+[2026-05-31T03:22:32.235Z] app ready
+[2026-05-31T03:22:32.413Z] creating window
+[2026-05-31T03:22:35.434Z] starting backend, development=true
+[2026-05-31T03:22:35.608Z] backend child pid=22824
+[2026-05-31T03:22:35.608Z] waiting for backend
+[2026-05-31T03:23:05.712Z] startup error: Error: Timed out waiting for http://127.0.0.1:3099/api/config
+    at waitForUrl (H:\ks\dist\electron\main.js:56:11)
+    at async createWindow (H:\ks\dist\electron\main.js:120:5)
+[2026-05-31T03:40:03.868Z] app ready
+[2026-05-31T03:40:03.870Z] creating window
+[2026-05-31T03:40:03.904Z] starting backend, development=false
+[2026-05-31T03:40:04.020Z] backend child pid=16432
+[2026-05-31T03:40:04.021Z] waiting for backend
+[2026-05-31T03:40:04.348Z] backend ready
+[2026-05-31T03:40:04.348Z] loading production frontend
+[2026-05-31T03:40:06.561Z] backend stdout: [32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16432  - [39m2026/05/31 11:40:04 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2026-05-31T03:40:06.562Z] backend stderr: [31m[Nest] 16432  - [39m2026/05/31 11:40:04 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use 127.0.0.1:3099[39m[38;5;3m +64ms[39m
+node:net:1939
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use 127.0.0.1:3099
+    at Server.setupListenHandle [as _listen2] (node:net:1939:16)
+    at listenInCluster (node:net:1996:12)
+    at node:net:2205:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '127.0.0.1',
+  port: 3099
+}
+
+Node.js v22.16.0
+[2026-05-31T03:40:06.563Z] backend exited code=1 signal=null
+[2026-05-31T03:41:44.773Z] app ready
+[2026-05-31T03:41:44.774Z] creating window
+[2026-05-31T03:41:44.812Z] starting backend, development=false
+[2026-05-31T03:41:44.905Z] backend child pid=8592
+[2026-05-31T03:41:44.906Z] waiting for backend
+[2026-05-31T03:41:45.078Z] backend ready
+[2026-05-31T03:41:45.078Z] loading production frontend
+[2026-05-31T03:41:45.693Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[2026-05-31T03:41:45.699Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +6ms[39m
+[2026-05-31T03:41:45.701Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +2ms[39m
+[2026-05-31T03:41:45.703Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +2ms[39m
+[2026-05-31T03:41:45.704Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +0ms[39m
+[2026-05-31T03:41:45.704Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +0ms[39m
+[2026-05-31T03:41:45.705Z] backend stdout: [32m[Nest] 8592  - [39m2026/05/31 11:41:45 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2026-05-31T03:41:45.721Z] backend stderr: [31m[Nest] 8592  - [39m2026/05/31 11:41:45 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use 127.0.0.1:3099[39m[38;5;3m +15ms[39m
+[2026-05-31T03:41:45.723Z] backend stderr: node:net:1939
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use 127.0.0.1:3099
+    at Server.setupListenHandle [as _listen2] (node:net:1939:16)
+    at listenInCluster (node:net:1996:12)
+    at node:net:2205:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '127.0.0.1',
+  port: 3099
+}
+
+Node.js v22.16.0
+[2026-05-31T03:41:45.732Z] backend exited code=1 signal=null
+[2026-05-31T03:53:15.079Z] app ready
+[2026-05-31T03:53:15.080Z] creating window
+[2026-05-31T03:53:15.135Z] starting backend, development=false
+[2026-05-31T03:53:15.253Z] backend child pid=47708
+[2026-05-31T03:53:15.253Z] waiting for backend
+[2026-05-31T03:53:15.922Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[2026-05-31T03:53:15.928Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[2026-05-31T03:53:15.931Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +3ms[39m
+[2026-05-31T03:53:15.933Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +2ms[39m
+[2026-05-31T03:53:15.933Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +0ms[39m
+[2026-05-31T03:53:15.934Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +0ms[39m
+[2026-05-31T03:53:15.935Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2026-05-31T03:53:16.230Z] backend ready
+[2026-05-31T03:53:16.230Z] loading production frontend
