@@ -117,6 +117,7 @@ async function createWindow() {
     minHeight: 620,
     backgroundColor: "#08a8f3",
     show: false,
+    fullscreen: true,
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -126,7 +127,6 @@ async function createWindow() {
   });
 
   mainWindow.once("ready-to-show", () => {
-    mainWindow?.maximize();
     mainWindow?.show();
   });
 

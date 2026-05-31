@@ -132,3 +132,20 @@ Node.js v22.16.0
 [2026-05-31T03:53:15.935Z] backend stdout: [32m[Nest] 47708  - [39m2026/05/31 11:53:15 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
 [2026-05-31T03:53:16.230Z] backend ready
 [2026-05-31T03:53:16.230Z] loading production frontend
+[2026-05-31T04:04:26.958Z] app ready
+[2026-05-31T04:04:26.960Z] creating window
+[2026-05-31T04:04:27.180Z] starting backend, development=false
+[2026-05-31T04:04:27.247Z] backend child pid=704
+[2026-05-31T04:04:27.248Z] waiting for backend
+[2026-05-31T04:04:28.194Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[2026-05-31T04:04:28.200Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[2026-05-31T04:04:28.202Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +3ms[39m
+[2026-05-31T04:04:28.204Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +1ms[39m
+[2026-05-31T04:04:28.205Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +0ms[39m
+[2026-05-31T04:04:28.205Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +0ms[39m
+[2026-05-31T04:04:28.206Z] backend stdout: [32m[Nest] 704  - [39m2026/05/31 12:04:28 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[2026-05-31T04:04:28.251Z] backend ready
+[2026-05-31T04:04:28.251Z] loading production frontend
