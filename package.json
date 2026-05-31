@@ -1,0 +1,46 @@
+{
+  "name": "exam-countdown-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/electron/main.js",
+  "workspaces": [
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "npm run build:shared && concurrently -k \"npm:dev:frontend\" \"npm:dev:electron\"",
+    "dev:frontend": "vite --config apps/frontend/vite.config.ts --host 127.0.0.1 --port 5173",
+    "dev:backend": "npm run build:shared && npm run build:backend && node dist/backend/main.js",
+    "dev:electron": "npm run build:backend && npm run build:electron && cross-env NODE_ENV=development electron .",
+    "start": "cross-env NODE_ENV=production electron .",
+    "build": "npm run build:shared && npm run build:backend && npm run build:frontend && npm run build:electron",
+    "build:shared": "tsc -p packages/shared/tsconfig.json",
+    "build:backend": "tsc -p apps/backend/tsconfig.json",
+    "build:frontend": "vite build --config apps/frontend/vite.config.ts",
+    "build:electron": "tsc -p apps/electron/tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@exam-countdown/shared": "workspace:*",
+    "@nestjs/common": "^11.1.0",
+    "@nestjs/core": "^11.1.0",
+    "@nestjs/platform-express": "^11.1.0",
+    "lucide-react": "^0.468.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^35.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}

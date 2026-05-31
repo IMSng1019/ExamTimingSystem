@@ -1,0 +1,114 @@
+{
+  "texts": {
+    "title": "西大附中高三二诊定时检测指令",
+    "subjectLabel": "考试科目",
+    "startLabel": "开考时间",
+    "endLabel": "结束时间",
+    "readyStatus": "准备",
+    "runningStatus": "进行中...",
+    "endedStatus": "结束",
+    "beforeStartPrefix": "离开始还有",
+    "beforeEndPrefix": "离结束还有",
+    "afterEndText": "考试已结束",
+    "footerLeft": "重庆市教育考试院监制",
+    "footerRight": "北碚区教育考试中心制作"
+  },
+  "subjects": [
+    {
+      "key": "chinese",
+      "label": "语文",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "math",
+      "label": "数学",
+      "startTime": "2026-05-31T10:18:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "english",
+      "label": "英语",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "physics",
+      "label": "物理",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "chemistry",
+      "label": "化学",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "biology",
+      "label": "生物",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "politics",
+      "label": "政治",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "history",
+      "label": "历史",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    },
+    {
+      "key": "geography",
+      "label": "地理",
+      "startTime": "2026-05-31T11:03:00",
+      "endTime": "2026-05-31T12:18:00"
+    }
+  ],
+  "selectedSubjectKeys": [
+    "math"
+  ],
+  "audioDirectory": "",
+  "bellRules": [
+    {
+      "id": "start-before-15",
+      "name": "考前15分钟",
+      "enabled": true,
+      "anchor": "start",
+      "direction": "before",
+      "offsetSeconds": 900,
+      "audioFile": ""
+    },
+    {
+      "id": "start-before-5",
+      "name": "考前5分钟",
+      "enabled": true,
+      "anchor": "start",
+      "direction": "before",
+      "offsetSeconds": 300,
+      "audioFile": ""
+    },
+    {
+      "id": "exam-start",
+      "name": "考试开始",
+      "enabled": true,
+      "anchor": "start",
+      "direction": "after",
+      "offsetSeconds": 0,
+      "audioFile": ""
+    },
+    {
+      "id": "exam-end",
+      "name": "考试结束",
+      "enabled": true,
+      "anchor": "end",
+      "direction": "after",
+      "offsetSeconds": 0,
+      "audioFile": ""
+    }
+  ]
+}
