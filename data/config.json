@@ -70,7 +70,9 @@
     }
   ],
   "selectedSubjectKeys": [
-    "chinese"
+    "chinese",
+    "math",
+    "english"
   ],
   "audioDirectory": "",
   "bellRules": [

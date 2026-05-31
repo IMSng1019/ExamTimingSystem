@@ -39,3 +39,6 @@
 
 - Preserve the current local desktop architecture: Electron owns the window, React renders the UI, Nest serves local APIs, and `packages/shared/` holds shared logic.
 - Keep changes scoped. Avoid unrelated refactors unless they are needed to make the app build or run.
+
+
+直接修改 不创建工作区

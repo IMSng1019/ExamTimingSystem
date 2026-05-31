@@ -3,11 +3,12 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, test } from "vitest";
 
 const css = readFileSync(fileURLToPath(new URL("./styles.css", import.meta.url)), "utf8");
+const desktopCss = css.slice(0, css.indexOf("@media"));
 
 function cssBlock(selector: string): string {
   const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const match = css.match(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`));
-  return match?.[1] ?? "";
+  const matches = [...desktopCss.matchAll(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`, "g"))];
+  return matches.at(-1)?.[1] ?? "";
 }
 
 describe("main exam screen visual calibration", () => {
@@ -15,6 +16,7 @@ describe("main exam screen visual calibration", () => {
     const title = cssBlock(".display h1");
 
     expect(title).toContain('font-family: SimHei, "Microsoft YaHei", "微软雅黑", sans-serif;');
+    expect(title).toContain("font-size: clamp(66px, 8.35vh, 104px);");
     expect(title).toContain("font-weight: 400;");
     expect(title).toContain("transform: scaleX(1.3);");
   });
@@ -30,10 +32,15 @@ describe("main exam screen visual calibration", () => {
     expect(meta).toContain("font-size: clamp(36px, 4.7vh, 54px);");
     expect(meta).toContain("line-height: 1;");
     expect(metaRows).toContain("min-height: 4.9vh;");
-    expect(metaLabels).toContain("flex: 0 0 clamp(260px, 17.6vw, 360px);");
+    expect(metaLabels).toContain("flex: 0 0 clamp(220px, 12vw, 320px);");
+    expect(metaLabels).toContain("white-space: nowrap;");
+    expect(metaLabels).toContain("word-break: keep-all;");
     expect(metaValues).toContain("font-weight: 400;");
     expect(subjectValues).toContain("font-size: clamp(58px, 6.8vh, 80px);");
     expect(subjectValues).toContain("font-weight: 400;");
+
+    const subjectStatus = cssBlock(".subject-line em");
+    expect(subjectStatus).toContain("margin-left: clamp(46px, 3vw, 72px);");
   });
 
   test("uses wide Song-style numerals for the main clock", () => {
