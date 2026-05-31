@@ -50,7 +50,7 @@ button {
 
 .display h1 {
   position: absolute;
-  top: 6.8%;
+  top: 8.5%;
   left: 0;
   width: 100%;
   margin: 0;
@@ -66,8 +66,8 @@ button {
 
 .meta {
   position: absolute;
-  top: 21.4%;
-  left: 7.6%;
+  top: 24.4%;
+  left: 8.5%;
   width: 86%;
   margin: 0;
   color: var(--exam-yellow);
