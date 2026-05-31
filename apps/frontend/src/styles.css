@@ -72,7 +72,7 @@ button {
   margin: 0;
   color: var(--exam-yellow);
   font-size: clamp(36px, 4.7vh, 54px);
-  line-height: 1.06;
+  line-height: 1;
   text-align: left;
 }
 
@@ -80,16 +80,16 @@ button {
 .subject-line {
   display: flex;
   align-items: baseline;
-  min-height: 5.45vh;
+  min-height: 4.9vh;
 }
 
 .subject-line {
-  min-height: 7.1vh;
+  min-height: 6.45vh;
 }
 
 .meta span,
 .subject-line span {
-  flex: 0 0 clamp(280px, 19vw, 400px);
+  flex: 0 0 clamp(260px, 17.6vw, 360px);
 }
 
 .meta strong {

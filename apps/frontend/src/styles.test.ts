@@ -21,11 +21,16 @@ describe("main exam screen visual calibration", () => {
 
   test("keeps the exam metadata compact and regular weight", () => {
     const meta = cssBlock(".meta");
+    const metaRows = cssBlock(".meta div,\n.subject-line");
+    const metaLabels = cssBlock(".meta span,\n.subject-line span");
     const metaValues = cssBlock(".meta strong");
     const subjectValues = cssBlock(".subject-line strong,\n.subject-line em");
 
     expect(meta).toContain("top: 21.4%;");
     expect(meta).toContain("font-size: clamp(36px, 4.7vh, 54px);");
+    expect(meta).toContain("line-height: 1;");
+    expect(metaRows).toContain("min-height: 4.9vh;");
+    expect(metaLabels).toContain("flex: 0 0 clamp(260px, 17.6vw, 360px);");
     expect(metaValues).toContain("font-weight: 400;");
     expect(subjectValues).toContain("font-size: clamp(58px, 6.8vh, 80px);");
     expect(subjectValues).toContain("font-weight: 400;");
