@@ -8,6 +8,7 @@ const node_child_process_1 = require("node:child_process");
 const node_fs_1 = require("node:fs");
 const node_fs_2 = require("node:fs");
 const node_path_1 = __importDefault(require("node:path"));
+const startup_1 = require("./startup");
 electron_1.app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 const BACKEND_URL = "http://127.0.0.1:3099/api/config";
 const FRONTEND_URL = "http://127.0.0.1:5173";
@@ -39,22 +40,6 @@ function attachProcessLogs(child, label) {
     child.on("exit", (code, signal) => log(`${label} exited code=${code ?? "null"} signal=${signal ?? "null"}`));
     child.on("error", (error) => log(`${label} error: ${error.stack ?? error.message}`));
 }
-async function waitForUrl(url, timeoutMs = 30000) {
-    const startedAt = Date.now();
-    while (Date.now() - startedAt < timeoutMs) {
-        try {
-            const response = await fetch(url);
-            if (response.ok) {
-                return;
-            }
-        }
-        catch {
-            // The server may still be starting.
-        }
-        await new Promise((resolve) => setTimeout(resolve, 300));
-    }
-    throw new Error(`Timed out waiting for ${url}`);
-}
 function startBackend() {
     if (backendProcess) {
         return;
@@ -83,6 +68,18 @@ function stopBackend() {
         backendProcess.kill("SIGTERM");
     }
     backendProcess = null;
+}
+async function ensureBackendReady() {
+    if (await (0, startup_1.isUrlReady)(BACKEND_URL)) {
+        log("using existing backend");
+        return;
+    }
+    startBackend();
+    log(`waiting for backend, timeout=${startup_1.BACKEND_STARTUP_TIMEOUT_MS}ms`);
+    await (0, startup_1.waitForUrl)(BACKEND_URL, {
+        timeoutMs: startup_1.BACKEND_STARTUP_TIMEOUT_MS
+    });
+    log("backend ready");
 }
 function getDialogParent() {
     return mainWindow && !mainWindow.isDestroyed() ? mainWindow : null;
@@ -115,13 +112,12 @@ async function createWindow() {
     mainWindow.once("ready-to-show", () => {
         mainWindow?.show();
     });
-    startBackend();
-    log("waiting for backend");
-    await waitForUrl(BACKEND_URL);
-    log("backend ready");
+    await ensureBackendReady();
     if (isDevelopment) {
-        log("waiting for frontend");
-        await waitForUrl(FRONTEND_URL);
+        log(`waiting for frontend, timeout=${startup_1.FRONTEND_STARTUP_TIMEOUT_MS}ms`);
+        await (0, startup_1.waitForUrl)(FRONTEND_URL, {
+            timeoutMs: startup_1.FRONTEND_STARTUP_TIMEOUT_MS
+        });
         log("frontend ready");
         await mainWindow.loadURL(FRONTEND_URL);
     }
@@ -190,6 +186,7 @@ electron_1.app.whenReady().then(() => {
     log("app ready");
     createWindow().catch((error) => {
         log(`startup error: ${error instanceof Error ? error.stack ?? error.message : String(error)}`);
+        stopBackend();
         electron_1.dialog.showErrorBox("启动失败", error instanceof Error ? error.message : String(error));
         electron_1.app.quit();
     });

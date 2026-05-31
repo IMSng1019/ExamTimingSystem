@@ -40,44 +40,63 @@ button {
 
 .display {
   position: relative;
-  width: min(100vw, calc(100vh * 16 / 9));
-  height: min(100vh, calc(100vw * 9 / 16));
-  margin: 0 auto;
-  padding: min(7.2vh, 70px) min(3.8vh, 42px) min(3.8vh, 42px);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   color: #ffffff;
   --exam-yellow: #fff0a8;
 }
 
 .display h1 {
-  margin: 0 0 min(2.2vh, 22px);
+  position: absolute;
+  top: 6.4%;
+  left: 0;
+  width: 100%;
+  margin: 0;
   text-align: center;
-  font-size: clamp(34px, 5.1vh, 56px);
+  font-size: clamp(60px, 8.2vh, 104px);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.05;
   letter-spacing: 0;
   white-space: nowrap;
+  transform: scaleX(1.24);
 }
 
 .meta {
-  width: 54%;
-  margin: 0 auto;
+  position: absolute;
+  top: 20.1%;
+  left: 7.6%;
+  width: 86%;
+  margin: 0;
   color: var(--exam-yellow);
-  font-size: clamp(22px, 3.2vh, 34px);
-  line-height: 1.18;
+  font-size: clamp(30px, 4.35vh, 56px);
+  line-height: 1.08;
   text-align: left;
 }
 
 .meta div,
 .subject-line {
-  min-height: clamp(28px, 3.7vh, 42px);
+  display: flex;
+  align-items: baseline;
+  min-height: 5.45vh;
+}
+
+.subject-line {
+  min-height: 7.75vh;
+}
+
+.meta span,
+.subject-line span {
+  flex: 0 0 clamp(280px, 19vw, 400px);
 }
 
 .meta strong {
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .subject-line {
-  display: block;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -90,42 +109,57 @@ button {
 .subject-line strong,
 .subject-line em {
   color: #ffffff;
+  font-size: clamp(54px, 7.2vh, 88px);
+  line-height: 0.95;
 }
 
 .subject-line em {
-  margin-left: 28px;
+  margin-left: clamp(86px, 5.8vw, 136px);
   font-style: normal;
   font-weight: 700;
 }
 
 .divider {
+  position: absolute;
+  top: 41.4%;
+  left: 0;
   width: 100%;
   height: 1px;
-  margin: min(1.8vh, 18px) 0 min(1.6vh, 16px);
+  margin: 0;
   background: rgba(0, 112, 178, 0.34);
 }
 
 .clock {
+  position: absolute;
+  top: 43.9%;
+  left: 0;
+  width: 100%;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  font-size: clamp(108px, 18vh, 188px);
+  font-size: clamp(180px, 26vh, 320px);
   font-weight: 400;
-  line-height: 1;
+  line-height: 0.9;
   letter-spacing: 0;
 }
 
 .remaining-divider {
+  position: absolute;
+  top: 73.6%;
+  left: 0;
   width: 100%;
   height: 1px;
-  margin: min(2.5vh, 26px) 0 min(1.5vh, 15px);
+  margin: 0;
   background: rgba(0, 112, 178, 0.26);
 }
 
 .remaining {
+  position: absolute;
+  top: 75.2%;
+  left: 1.8%;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   color: var(--exam-yellow);
-  font-size: clamp(28px, 4vh, 42px);
+  font-size: clamp(34px, 4.9vh, 62px);
   line-height: 1.2;
   text-align: left;
   white-space: nowrap;
@@ -134,13 +168,13 @@ button {
 .display footer {
   position: absolute;
   right: 0;
-  bottom: min(7.2vh, 78px);
+  bottom: 6%;
   left: 0;
   display: flex;
   justify-content: center;
-  gap: clamp(56px, 9vh, 118px);
+  gap: clamp(260px, 20vw, 460px);
   color: var(--exam-yellow);
-  font-size: clamp(22px, 3.1vh, 32px);
+  font-size: clamp(32px, 4.4vh, 54px);
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -423,23 +457,55 @@ button {
   .display {
     width: 100vw;
     height: 100vh;
-    padding-right: 5vw;
-    padding-left: 5vw;
+    padding: 0;
   }
 
   .display h1 {
+    top: 6%;
+    padding: 0 4vw;
+    font-size: clamp(28px, 7vw, 52px);
     white-space: normal;
+    transform: none;
   }
 
-  .meta,
+  .meta {
+    top: 20%;
+    left: 4vw;
+    width: 92vw;
+    font-size: clamp(20px, 5vw, 34px);
+  }
+
+  .meta span,
+  .subject-line span {
+    flex-basis: 34vw;
+  }
+
+  .subject-line strong,
+  .subject-line em {
+    font-size: clamp(34px, 9vw, 64px);
+  }
+
+  .subject-line em {
+    margin-left: clamp(28px, 7vw, 72px);
+  }
+
+  .clock {
+    top: 45%;
+    font-size: clamp(80px, 24vw, 150px);
+  }
+
   .remaining {
-    width: 100%;
+    left: 4vw;
+    width: 92vw;
+    font-size: clamp(24px, 6.5vw, 42px);
   }
 
   .display footer {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    bottom: 5vh;
+    font-size: clamp(18px, 4.5vw, 30px);
   }
 
   .form-grid,

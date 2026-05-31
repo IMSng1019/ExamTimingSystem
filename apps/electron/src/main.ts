@@ -3,6 +3,7 @@ import { spawn, type ChildProcess } from "node:child_process";
 import { appendFileSync, mkdirSync } from "node:fs";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { BACKEND_STARTUP_TIMEOUT_MS, FRONTEND_STARTUP_TIMEOUT_MS, isUrlReady, waitForUrl } from "./startup";
 
 app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 
@@ -42,25 +43,6 @@ function attachProcessLogs(child: ChildProcess, label: string) {
   child.on("error", (error) => log(`${label} error: ${error.stack ?? error.message}`));
 }
 
-async function waitForUrl(url: string, timeoutMs = 30000) {
-  const startedAt = Date.now();
-
-  while (Date.now() - startedAt < timeoutMs) {
-    try {
-      const response = await fetch(url);
-      if (response.ok) {
-        return;
-      }
-    } catch {
-      // The server may still be starting.
-    }
-
-    await new Promise((resolve) => setTimeout(resolve, 300));
-  }
-
-  throw new Error(`Timed out waiting for ${url}`);
-}
-
 function startBackend() {
   if (backendProcess) {
     return;
@@ -92,6 +74,20 @@ function stopBackend() {
   }
 
   backendProcess = null;
+}
+
+async function ensureBackendReady() {
+  if (await isUrlReady(BACKEND_URL)) {
+    log("using existing backend");
+    return;
+  }
+
+  startBackend();
+  log(`waiting for backend, timeout=${BACKEND_STARTUP_TIMEOUT_MS}ms`);
+  await waitForUrl(BACKEND_URL, {
+    timeoutMs: BACKEND_STARTUP_TIMEOUT_MS
+  });
+  log("backend ready");
 }
 
 function getDialogParent() {
@@ -130,14 +126,13 @@ async function createWindow() {
     mainWindow?.show();
   });
 
-  startBackend();
-  log("waiting for backend");
-  await waitForUrl(BACKEND_URL);
-  log("backend ready");
+  await ensureBackendReady();
 
   if (isDevelopment) {
-    log("waiting for frontend");
-    await waitForUrl(FRONTEND_URL);
+    log(`waiting for frontend, timeout=${FRONTEND_STARTUP_TIMEOUT_MS}ms`);
+    await waitForUrl(FRONTEND_URL, {
+      timeoutMs: FRONTEND_STARTUP_TIMEOUT_MS
+    });
     log("frontend ready");
     await mainWindow.loadURL(FRONTEND_URL);
   } else {
@@ -215,6 +210,7 @@ app.whenReady().then(() => {
   log("app ready");
   createWindow().catch((error) => {
     log(`startup error: ${error instanceof Error ? error.stack ?? error.message : String(error)}`);
+    stopBackend();
     dialog.showErrorBox("启动失败", error instanceof Error ? error.message : String(error));
     app.quit();
   });

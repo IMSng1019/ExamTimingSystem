@@ -17,8 +17,8 @@
     {
       "key": "chinese",
       "label": "语文",
-      "startTime": "2026-05-31T11:03:00",
-      "endTime": "2026-05-31T12:18:00"
+      "startTime": "2026-05-31T14:21:00",
+      "endTime": "2026-05-31T16:21:00"
     },
     {
       "key": "math",
@@ -70,7 +70,7 @@
     }
   ],
   "selectedSubjectKeys": [
-    "math"
+    "chinese"
   ],
   "audioDirectory": "",
   "bellRules": [
