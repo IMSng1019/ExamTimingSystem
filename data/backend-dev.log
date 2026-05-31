@@ -1,0 +1,22 @@
+
+> exam-countdown-desktop@0.1.0 dev:backend
+> npm run build:shared && npm run build:backend && node dist/backend/main.js
+
+
+> exam-countdown-desktop@0.1.0 build:shared
+> tsc -p packages/shared/tsconfig.json
+
+
+> exam-countdown-desktop@0.1.0 build:backend
+> tsc -p apps/backend/tsconfig.json
+
+[32m[Nest] 36112  - [39m2026/05/31 14:37:20 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +131ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +341ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +8ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36112  - [39m2026/05/31 14:37:21 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m

@@ -192,3 +192,7 @@ Node.js v22.16.0
 [2026-05-31T06:09:04.786Z] backend stdout: [32m[Nest] 40604  - [39m2026/05/31 14:09:04 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
 [2026-05-31T06:09:05.214Z] backend ready
 [2026-05-31T06:09:05.214Z] loading production frontend
+[2026-05-31T06:53:09.345Z] app ready
+[2026-05-31T06:53:10.537Z] creating window
+[2026-05-31T06:53:13.204Z] using existing backend
+[2026-05-31T06:53:13.204Z] loading production frontend
