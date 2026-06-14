@@ -272,3 +272,37 @@ Node.js v22.16.0
 [2026-05-31T14:55:10.299Z] creating window
 [2026-05-31T14:55:10.412Z] using existing backend
 [2026-05-31T14:55:10.412Z] loading production frontend
+[2026-06-14T15:13:31.569Z] app ready
+[2026-06-14T15:13:31.571Z] creating window
+[2026-06-14T15:13:32.212Z] starting backend, development=false
+[2026-06-14T15:13:32.242Z] backend child pid=35776
+[2026-06-14T15:13:32.242Z] waiting for backend, timeout=90000ms
+[2026-06-14T15:13:32.651Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[2026-06-14T15:13:32.654Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +3ms[39m
+[2026-06-14T15:13:32.655Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +2ms[39m
+[2026-06-14T15:13:32.656Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +1ms[39m
+[2026-06-14T15:13:32.657Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +0ms[39m
+[2026-06-14T15:13:32.657Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +0ms[39m
+[2026-06-14T15:13:32.658Z] backend stdout: [32m[Nest] 35776  - [39m2026/06/14 23:13:32 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2026-06-14T15:13:32.871Z] backend ready
+[2026-06-14T15:13:32.871Z] loading production frontend
+[2026-06-14T15:16:06.628Z] app ready
+[2026-06-14T15:16:06.630Z] creating window
+[2026-06-14T15:16:06.692Z] starting backend, development=false
+[2026-06-14T15:16:06.724Z] backend child pid=5140
+[2026-06-14T15:16:06.724Z] waiting for backend, timeout=90000ms
+[2026-06-14T15:16:07.127Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[2026-06-14T15:16:07.130Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +4ms[39m
+[2026-06-14T15:16:07.132Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mConfigController {/api/config}:[39m[38;5;3m +1ms[39m
+[2026-06-14T15:16:07.133Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, GET} route[39m[38;5;3m +1ms[39m
+[2026-06-14T15:16:07.133Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config, PUT} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/config/validate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAudioController {/api/audio}:[39m[38;5;3m +0ms[39m
+[2026-06-14T15:16:07.134Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/files, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audio/file, GET} route[39m[38;5;3m +0ms[39m
+[2026-06-14T15:16:07.134Z] backend stdout: [32m[Nest] 5140  - [39m2026/06/14 23:16:07 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2026-06-14T15:16:07.355Z] backend ready
+[2026-06-14T15:16:07.356Z] loading production frontend
